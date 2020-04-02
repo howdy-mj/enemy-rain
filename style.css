@@ -1,0 +1,18 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#bg {
+    background-image: url("./images/bg.png");
+    width: 800px;
+    height: 600px;
+}
+
+.hero {
+    background-image: url("./images/hero.png");
+    position: absolute;
+    width: 140px;
+    height: 54px;
+    margin: 546px auto 0 auto;
+}
