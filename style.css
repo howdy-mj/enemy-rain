@@ -4,15 +4,17 @@ body {
 }
 
 #bg {
-    background-image: url("./images/bg.png");
+    background: url("./images/bg.png");
+    position: relative;
     width: 800px;
     height: 600px;
 }
 
 .hero {
-    background-image: url("./images/hero.png");
+    background: url("./images/hero.png") 140px;
     position: absolute;
-    width: 140px;
+    width: 35px;
     height: 54px;
-    margin: 546px auto 0 auto;
+    top: 546px;
+    margin: 0 382.5px;
 }
