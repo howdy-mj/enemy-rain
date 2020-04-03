@@ -5,7 +5,7 @@ let heroLocation = "382.5";
 function turnFront() {
     hero.className = "hero";
     hero.style.left = `${heroLocation}px`;
-    bg.appendChild(hero);    
+    bg.appendChild(hero);
 }
 
 function init() {
