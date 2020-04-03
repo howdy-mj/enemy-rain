@@ -7,12 +7,15 @@ const enemyAppear = () => {
     // console.log(enemy.style.left);
 
     let enemyLocationY = 0;
-    setInterval( () => {
+    let repeatEnemyDown = setInterval( () => {
         if (enemyLocationY >= 540) { 
             enemy.className = "enemy die";
             if (enemy.style.top = 550 + "px") { 
                 enemy.className = "enemy die";
-                // setTimeout(bg.removeChild(enemy), 3000);
+                clearInterval(repeatEnemyDown);
+                setTimeout( () => {
+                    bg.removeChild(enemy);
+                }, 1000);
             }
         }
         enemyLocationY += 5;
@@ -24,7 +27,10 @@ const enemyAppear = () => {
             if (hero.offsetLeft - enemy.offsetLeft <= 50  && hero.offsetLeft - enemy.offsetLeft >= -50) {
                 enemy.className = "enemy die";
                 if (enemyLocationY >= 555) {
-                    bg.removeChild(enemy);
+                    clearInterval(repeatEnemyDown);
+                    setTimeout( () => {
+                        bg.removeChild(enemy);
+                    }, 50);
                 }
                 
             }
