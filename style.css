@@ -1,6 +1,7 @@
 body {
     display: flex;
     justify-content: center;
+    overflow-y: hidden;
 }
 
 #bg {
@@ -16,4 +17,15 @@ body {
     width: 35px;
     height: 54px;
     bottom: 0;
+}
+
+.enemy {
+    background-image: url("./images/enemy.png");
+    position: absolute;
+    width: 45px;
+    height: 54px;
+}
+
+.die {
+    background-position: 45px;
 }
