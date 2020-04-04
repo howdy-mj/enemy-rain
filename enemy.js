@@ -1,3 +1,5 @@
+const dayingAudio = new Audio('./audio/dying.wav');
+
 const enemyAppear = () => {
     let enemy = document.createElement("div");
     enemy.className = "enemy";
@@ -25,14 +27,12 @@ const enemyAppear = () => {
         if (enemyLocationY >= 510) {
         // console.log(`두 값의 차이는 ${hero.offsetLeft - enemy.offsetLeft}`);
             if (hero.offsetLeft - enemy.offsetLeft <= 50  && hero.offsetLeft - enemy.offsetLeft >= -50) {
+                dayingAudio.play();
                 enemy.className = "enemy die";
-                if (enemyLocationY >= 555) {
                     clearInterval(repeatEnemyDown);
                     setTimeout( () => {
                         bg.removeChild(enemy);
-                    }, 50);
-                }
-                
+                    }, 300);
             }
         }
     }, 100);
