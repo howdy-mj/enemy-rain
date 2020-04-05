@@ -1,42 +1,53 @@
 const dayingAudio = new Audio('./audio/dying.wav');
 
-const enemyAppear = () => {
-    let enemy = document.createElement("div");
-    enemy.className = "enemy";
-    enemy.style.left = Math.random() * 745 + "px";
-    enemy.style.top = 0 +"px";
-    bg.appendChild(enemy);
-    // console.log(enemy.style.left);
+class Enemy {
+    constructor(name) {
+        this.name = name;
+        this.top = 0;
+        this.left = Math.random() * 745;
+        this.createEnemy();
+    }
 
-    let enemyLocationY = 0;
-    let repeatEnemyDown = setInterval( () => {
-        if (enemyLocationY >= 540) { 
-            enemy.className = "enemy die";
-            if (enemy.style.top = 550 + "px") { 
-                enemy.className = "enemy die";
-                clearInterval(repeatEnemyDown);
-                setTimeout( () => {
-                    bg.removeChild(enemy);
-                }, 1000);
-            }
-        }
-        enemyLocationY += 5;
-        enemy.style.top = `${enemyLocationY}px`;
-        // console.log(enemyLocationY);
-        
-        if (enemyLocationY >= 510) {
-        // console.log(`두 값의 차이는 ${hero.offsetLeft - enemy.offsetLeft}`);
-            if (test.offsetLeft - enemy.offsetLeft <= 50  && test.offsetLeft - enemy.offsetLeft >= -50) {
-                dayingAudio.play();
-                enemy.className = "enemy die";
-                    clearInterval(repeatEnemyDown);
+    createEnemy() {
+        const bg = document.querySelector("#bg");
+        this.enemy = document.createElement("div");
+        this.enemy.className = "enemy"
+        this.enemy.style.left = this.left + "px";
+        this.enemy.style.top = this.top + "px";
+        bg.appendChild(this.enemy);
+        this.repeatEnemyDown();
+    }
+
+    repeatEnemyDown() {
+        this.timeoutID = setInterval( () => {
+            if (this.top >= 540) { 
+                if (this.enemy.style.top = 550 + "px") { 
+                    this.enemy.className = "enemy die";
+                    clearInterval(this.timeoutID);
                     setTimeout( () => {
-                        bg.removeChild(enemy);
-                    }, 300);
+                        // console.log(this.enemy);
+                        // console.log(bg)
+                        bg.removeChild(this.enemy);
+                    }, 1000);
+                }
             }
-        }
-    }, 100);
-}
+            // console.log(this.top);
+            // console.log(this.enemy.style.top);
 
-setInterval(enemyAppear, 3000);
-// enemyAppear();
+            this.top += 5;
+            this.enemy.style.top = this.top + "px";
+            // console.log(this.enemy.style.top);
+            
+            if (this.top >= 510) {
+                if (test.left - this.left <= 50  && test.left - this.left >= -50) {
+                    dayingAudio.play();
+                    this.enemy.className = "enemy die";
+                    clearInterval(this.timeoutID);
+                    setTimeout( () => {
+                        bg.removeChild(this.enemy);
+                    }, 300);
+                }
+            }
+        }, 100);
+    }
+}
