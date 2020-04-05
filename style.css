@@ -12,11 +12,26 @@ body {
 }
 
 .hero {
-    background: url("./images/hero.png") 140px;
+    background-image: url("./images/hero.png");
     position: absolute;
     width: 35px;
     height: 54px;
-    bottom: 0;
+}
+
+.front {
+    background-position: 140px;
+}
+
+.back {
+    background-position: 105px;
+}
+
+.right {
+    background-position: 35px;
+}
+
+.left {
+    background-position: 70px;
 }
 
 .enemy {

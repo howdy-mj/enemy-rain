@@ -26,7 +26,7 @@ const enemyAppear = () => {
         
         if (enemyLocationY >= 510) {
         // console.log(`두 값의 차이는 ${hero.offsetLeft - enemy.offsetLeft}`);
-            if (hero.offsetLeft - enemy.offsetLeft <= 50  && hero.offsetLeft - enemy.offsetLeft >= -50) {
+            if (test.offsetLeft - enemy.offsetLeft <= 50  && test.offsetLeft - enemy.offsetLeft >= -50) {
                 dayingAudio.play();
                 enemy.className = "enemy die";
                     clearInterval(repeatEnemyDown);
