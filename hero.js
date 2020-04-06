@@ -24,7 +24,7 @@ class Hero {
     }
 
     moveLeft() {
-        // console.log("moverL");
+        // console.log("moveL");
         this.left -= 5;
         this.hero.style.left = this.left +"px";
     }

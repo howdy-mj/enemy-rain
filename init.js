@@ -1,10 +1,6 @@
 let test = new Hero("test-one");
-// let ghost = new Enemy("ghost-one");
 let ghost;
 
-// setInterval(() => {
-//    new Enemy('ghost')
-// }, 3000);
 setInterval(() => {
     ghost = new Enemy('ghost');
 }, 3000);

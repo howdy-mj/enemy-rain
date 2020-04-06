@@ -6,6 +6,7 @@ class Enemy {
         this.top = 0;
         this.left = Math.random() * 745;
         this.createEnemy();
+        console.log(this);
     }
 
     createEnemy() {
@@ -51,3 +52,4 @@ class Enemy {
         }, 100);
     }
 }
+
