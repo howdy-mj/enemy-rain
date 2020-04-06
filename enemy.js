@@ -6,7 +6,7 @@ class Enemy {
         this.top = 0;
         this.left = Math.random() * 745;
         this.createEnemy();
-        console.log(this);
+        // console.log(this);
     }
 
     createEnemy() {
