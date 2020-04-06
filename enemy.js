@@ -1,4 +1,4 @@
-const dayingAudio = new Audio('./audio/dying.wav');
+const dyingAudio = new Audio('./audio/dying.wav');
 
 class Enemy {
     constructor(name) {
@@ -41,7 +41,7 @@ class Enemy {
             
             if (this.top >= 510) {
                 if (test.left - this.left <= 50  && test.left - this.left >= -50) {
-                    dayingAudio.play();
+                    dyingAudio.play();
                     this.enemy.className = "enemy die";
                     clearInterval(this.timeoutID);
                     setTimeout( () => {
